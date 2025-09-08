@@ -1,4 +1,4 @@
-package com.example.casestudy.controllers;
+package com.example.casestudy.controllers.admin;
 
 import com.example.casestudy.models.Categories;
 import com.example.casestudy.services.CategoryService;
@@ -9,7 +9,6 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 
 @WebServlet("/create-category")
 public class CreateCategoryServlet extends HttpServlet {

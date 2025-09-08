@@ -1,4 +1,4 @@
-package com.example.casestudy.controllers;
+package com.example.casestudy.controllers.admin;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;

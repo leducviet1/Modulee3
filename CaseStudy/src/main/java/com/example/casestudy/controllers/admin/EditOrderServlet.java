@@ -1,4 +1,4 @@
-package com.example.casestudy.controllers;
+package com.example.casestudy.controllers.admin;
 
 import com.example.casestudy.models.Categories;
 import com.example.casestudy.models.Orders;

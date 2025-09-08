@@ -1,4 +1,4 @@
-package com.example.casestudy.controllers;
+package com.example.casestudy.controllers.admin;
 
 import com.example.casestudy.services.OrdersService;
 import jakarta.servlet.ServletException;
