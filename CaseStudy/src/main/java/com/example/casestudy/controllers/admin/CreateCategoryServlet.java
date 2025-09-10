@@ -14,7 +14,7 @@ import java.io.IOException;
 public class CreateCategoryServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getRequestDispatcher("form-category.jsp").forward(req, resp);
+        req.getRequestDispatcher("/form-category.jsp").forward(req, resp);
     }
 
     @Override
@@ -26,7 +26,7 @@ public class CreateCategoryServlet extends HttpServlet {
         CategoryService categoryService = new CategoryService();
         if (categoryService.existsByName(name)) {
             req.setAttribute("error", "Tên loại đã tồn tại!");
-            req.getRequestDispatcher("form-category.jsp").forward(req, resp);
+            req.getRequestDispatcher("/form-category.jsp").forward(req, resp);
             return;
         }
         categoryService.addCategory(categories);

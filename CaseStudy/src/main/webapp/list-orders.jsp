@@ -4,8 +4,7 @@
 <layout:base>
     <jsp:attribute name="title">Danh sách sản phẩm</jsp:attribute>
     <jsp:body><p></p>
-        <button type="button" class="btn btn-info"><a href="./create-order"
-                                                      class="link-body-emphasis link-offset-2 link-underline-opacity-25 link-underline-opacity-75-hover">Thêm
+        <button type="button" class="btn btn-info"><a href="./create-order" class="link-body-emphasis link-offset-2 link-underline-opacity-25 link-underline-opacity-75-hover">Thêm
             sản phẩm mới</a></button>
         <h2>Danh sách sản phẩm</h2>
         <table class="table">
@@ -32,8 +31,9 @@
                 <td>${order.categories_name}</td>
                 <td>${order.orderStatus}</td>
                 <td>
-                    <a href="edit-order?id=${order.id}">Sửa</a>
-                    <a href="delete-order?id=${order.id}">Xóa</a>
+                    <button type="button" class="btn btn-danger"><a href="edit-order?id=${order.id}" class="link-body-emphasis link-offset-2 link-underline-opacity-25 link-underline-opacity-75-hover">Sửa</a></button>
+                    <button type="button" class="btn btn-success"><a href="delete-order?id=${order.id}" class="link-body-emphasis link-offset-2 link-underline-opacity-25 link-underline-opacity-75-hover">Xóa</a></button>
+
                 </td>
             </tr>
             </tbody>

@@ -20,7 +20,7 @@ public class EditCategoryServlet extends HttpServlet {
         Categories category = categoryService.getCategoryById(Integer.parseInt(id));
 
         req.setAttribute("category",category);
-        req.getRequestDispatcher("form-category.jsp").forward(req,resp);
+        req.getRequestDispatcher("/form-category.jsp").forward(req,resp);
     }
 
     @Override

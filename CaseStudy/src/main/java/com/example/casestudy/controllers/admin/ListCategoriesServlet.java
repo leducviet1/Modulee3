@@ -19,6 +19,6 @@ public class ListCategoriesServlet extends HttpServlet {
         List<Categories> categories = service.getAllCategories();
 
         req.setAttribute("categories", categories);
-        req.getRequestDispatcher("list-categories.jsp").forward(req, resp);
+        req.getRequestDispatcher("/list-categories.jsp").forward(req, resp);
     }
 }

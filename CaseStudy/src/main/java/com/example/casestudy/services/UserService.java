@@ -50,7 +50,7 @@ public class UserService {
         return false;
     }
     public List<User> getAllUsers() {
-        String SQL = "select u.id, u.username, u.password from users as u";
+        String SQL = "SELECT id, username, password FROM users WHERE `role` = 'user'";
         List<User> users = new ArrayList<>();
 
         try(Connection conn = DBConnection.getConnection();

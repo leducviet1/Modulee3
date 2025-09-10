@@ -28,9 +28,9 @@ public class LoginServlet extends HttpServlet {
             session.setAttribute("user", user);
 
             if ("admin".equals(user.getRole())) {
-                resp.sendRedirect("./admin.jsp");
+                resp.sendRedirect("./orders");
             } else {
-                resp.sendRedirect("./user.jsp"); // user thường redirect sang trang khác
+                resp.sendRedirect("./list-product"); // user thường redirect sang trang khác
             }
         }else {
             resp.setContentType("text/html;charset=UTF-8");

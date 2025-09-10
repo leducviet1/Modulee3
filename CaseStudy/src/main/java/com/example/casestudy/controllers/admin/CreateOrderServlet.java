@@ -27,7 +27,7 @@ public class CreateOrderServlet extends HttpServlet {
         List<Categories> categories = service.getAllCategories();
         req.setAttribute("categories", categories);
 
-        req.getRequestDispatcher("form-order.jsp").forward(req, resp);
+        req.getRequestDispatcher("/form-order.jsp").forward(req, resp);
     }
 
     @Override

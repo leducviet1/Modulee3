@@ -25,7 +25,7 @@ public class ListOrdersServlet extends HttpServlet {
 //        } else {
 //            req.getRequestDispatcher("/user.jsp").forward(req, resp);
 //        }
-        req.getRequestDispatcher("list-orders.jsp").forward(req, resp);
+        req.getRequestDispatcher("/list-orders.jsp").forward(req, resp);
 //        req.getRequestDispatcher("user.jsp").forward(req, resp);
     }
 }

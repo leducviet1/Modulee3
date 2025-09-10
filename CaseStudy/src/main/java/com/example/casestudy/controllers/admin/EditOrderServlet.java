@@ -29,11 +29,11 @@ public class EditOrderServlet extends HttpServlet {
         Orders order = service.getById(Integer.parseInt(id));
 //        Orders orders = service.getAllOrders();
         CategoryService categoryService = new CategoryService();
-        List<Categories> categoryList = categoryService.getAllCategories();
+        List<Categories> categories = categoryService.getAllCategories();
 
         req.setAttribute("order", order);
-        req.setAttribute("categoryList", categoryList);
-        req.getRequestDispatcher("form-order.jsp").forward(req, resp);
+        req.setAttribute("categories", categories);
+        req.getRequestDispatcher("/form-order.jsp").forward(req, resp);
     }
 
     @Override
