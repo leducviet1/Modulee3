@@ -55,9 +55,26 @@ public class OrdersService {
             throw new RuntimeException(e);
         }
     }
-    public List<Orders> getAllOrders() {
+    public List<Orders> getAllOrders(String q, String sortBy, String categoryId,String sortOrder) {
         List<Orders> orders = new ArrayList<>();
-        String SQL = "SELECT o.id, o.name, o.price, o.image, o.description, o.order_status, c.name AS categories_name FROM orders o LEFT JOIN categories c ON o.category_id=c.id; ";
+        String SQL = "SELECT o.id, o.name, o.price, o.image, o.description,o.category_id, o.order_status, c.name AS categories_name FROM orders o LEFT JOIN categories c ON o.category_id=c.id ";
+        if (q != null && !q.isEmpty()) {
+            SQL = SQL + " WHERE o.name LIKE '%" + q + "%' OR o.description  LIKE '%" + q + "%'";
+        }
+        if(categoryId != null && !categoryId.isEmpty()) {
+            if(q != null && !q.isEmpty()) {
+                SQL += " AND ";
+            }else{
+                SQL += " WHERE ";
+            }
+            SQL = SQL + " o.category_id = " + categoryId + "";
+        }
+        if (sortBy != null && !sortBy.isEmpty()) {
+            SQL = SQL + " ORDER BY " + sortBy;
+            if(sortOrder != null && !sortOrder.isEmpty()) {
+                SQL = SQL + " " + sortOrder;
+            }
+        }
 
         try (Connection conn = dbConnection.getConnection();
              PreparedStatement preparedStatement = conn.prepareStatement(SQL);
@@ -69,6 +86,7 @@ public class OrdersService {
             BigDecimal price = resultSet.getBigDecimal("price");
             String image = resultSet.getString("image");
             String description = resultSet.getString("description");
+            int category_id = resultSet.getInt("category_id");
             String orderStatus = resultSet.getString("order_status");
             String categories_name = resultSet.getString("categories_name");
             Orders order = new Orders(id, name, price, image, description, orderStatus,categories_name);

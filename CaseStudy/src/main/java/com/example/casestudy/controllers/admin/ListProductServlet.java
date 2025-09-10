@@ -13,8 +13,12 @@ import java.util.List;
 @WebServlet("/list-product")
 public class ListProductServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String q= req.getParameter("q");
+        String sortBy = req.getParameter("sortBy");
+        String categoryId = req.getParameter("categoryId");
+        String sortOrder = req.getParameter("sortOrder");
         OrdersService ordersService = new OrdersService();
-        List<Orders> products = ordersService.getAllOrders();
+        List<Orders> products = ordersService.getAllOrders(q,sortBy,categoryId,sortOrder);
         req.setAttribute("products", products);
 
         req.getRequestDispatcher("/user.jsp").forward(req, resp);

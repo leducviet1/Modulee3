@@ -12,10 +12,11 @@ import java.util.List;
 
 public class UserService {
     public User login(String username, String password) {
-        String SQL = "select * from users where username=? ";
+        String SQL = "select * from users where username=? AND password=? ";
         try(Connection conn= DBConnection.getConnection();
         PreparedStatement statement = conn.prepareStatement(SQL);){
             statement.setString(1, username);
+            statement.setString(2, password);
             ResultSet rs = statement.executeQuery();
             if(rs.next()){
 
@@ -100,4 +101,6 @@ public class UserService {
             throw new RuntimeException(e);
         }
     }
+
 }
+

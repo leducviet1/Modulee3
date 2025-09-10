@@ -24,7 +24,8 @@ public class UserCheckFilter extends HttpFilter {
         }
         if ((req.getRequestURI().startsWith(req.getContextPath() + "/admin")
                 || req.getRequestURI().endsWith("/orders")
-                || req.getRequestURI().endsWith("/categories"))
+                || req.getRequestURI().endsWith("/categories")
+        ||req.getRequestURI().endsWith("/list-user"))
                 && !"admin".equals(user.getRole())) {
             // User thường không được phép
             res.sendRedirect(req.getContextPath() + "/user.jsp"); // Hoặc trang home user

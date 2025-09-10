@@ -60,60 +60,12 @@
             <ul class="nav nav-pills">
                 <li class="nav-item"><a href="./list-product" class="nav-link ${fn:contains(pageContext.request.requestURI, '/orders') ? 'active' : ''}"
                                         aria-current="page">Danh sách sản phẩm</a></li>
-                <li class="nav-item"><a href="#" class="nav-link"><button type="button" class="btn btn-danger">${user.username}</button></a></li>
+                <li class="nav-item"><a href="./profile-user" class="nav-link"><button type="button" class="btn btn-danger">${user.username}</button></a></li>
                 <li class="nav-item"><a href="./logout" class="nav-link"><button type="button" class="btn btn-primary">Đăng xuất</button></a></li>
             </ul>
         </header>
     </div>
 
-    <!-- Bảng sản phẩm -->
-<%--    <div class="table-responsive">--%>
-<%--        <table class="table table-bordered table-hover align-middle">--%>
-<%--            <thead class="table-dark">--%>
-<%--            <tr>--%>
-<%--                <th>STT</th>--%>
-<%--                <th>Tên sản phẩm</th>--%>
-<%--                <th>Giá sản phẩm</th>--%>
-<%--                <th>Ảnh</th>--%>
-<%--                <th>Mô tả</th>--%>
-<%--                <th>Phân loại</th>--%>
-<%--                <th>Trạng thái</th>--%>
-<%--                <th>Thao tác</th>--%>
-<%--            </tr>--%>
-<%--            </thead>--%>
-<%--            <tbody>--%>
-<%--            <c:forEach items="${products}" var="product" varStatus="status">--%>
-<%--                <tr>--%>
-<%--                    <td>${status.index + 1}</td>--%>
-<%--                    <td>${product.name}</td>--%>
-<%--                    <td>${product.price}</td>--%>
-<%--                    <td>--%>
-<%--                        <c:if test="${not empty product.image}">--%>
-<%--                            <img src="./download?fileName=${product.image}" alt="${product.name}"--%>
-<%--                                 class="img-thumbnail" style="height:50px; width:50px;">--%>
-<%--                        </c:if>--%>
-<%--                    </td>--%>
-<%--                    <td>${product.description}</td>--%>
-<%--                    <td>${product.categories_name}</td>--%>
-<%--                    <td>--%>
-<%--                        <c:choose>--%>
-<%--                            <c:when test="${product.orderStatus == 'Còn hàng'}">--%>
-<%--                                <span class="badge bg-success">${product.orderStatus}</span>--%>
-<%--                            </c:when>--%>
-<%--                            <c:otherwise>--%>
-<%--                                <span class="badge bg-secondary">${product.orderStatus}</span>--%>
-<%--                            </c:otherwise>--%>
-<%--                        </c:choose>--%>
-<%--                    </td>--%>
-<%--                    <td>--%>
-<%--                        <button class="btn btn-primary btn-sm">Mua ngay</button>--%>
-<%--                    </td>--%>
-<%--                </tr>--%>
-<%--            </c:forEach>--%>
-<%--            </tbody>--%>
-<%--        </table>--%>
-<%--    </div>--%>
-<%--</div>--%>
     <div class="container mt-5">
         <h1 class="mb-4">Danh sách sản phẩm</h1>
         <ul class="row list-unstyled">
